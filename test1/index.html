@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body ng-controller="PageController as PageCtrl">
+
+        <ul>
+          <li><a href="#" ng-click="section1.view = 'home'">Home</a></li>
+          <li><a href="#" ng-click="section1.view = 'login'">Login</a></li>
+          <li><a href="#" ng-click="section1.view = 'inscription'">Inscription</a></li>
+          <li><a href="#" ng-click="section1.view = 'about'">About</a></li>
+        </ul>
+
+        <switch-fader name="section1" view="view">
+          <case-fader style="display: none" view="home">
+            <div>This is the home</div>
+          </case-fader>
+          <case-fader style="display: none" view="login">
+            <div>This is the login page</div>
+          </case-fader>
+          <case-fader style="display: none" view="inscription" default>
+            <div>This is the inscription page</div>
+          </case-fader>
+          <case-fader style="display: none" view="about">
+            <div>About the site</div>
+          </case-fader>
+        </switch-fader>
+
+        <br/>
+
+        <ul>
+          <li><a href="#" ng-click="section2.view = 'home'">Home</a></li>
+          <li><a href="#" ng-click="section2.view = 'login'">Login</a></li>
+          <li><a href="#" ng-click="section2.view = 'inscription'">Inscription</a></li>
+          <li><a href="#" ng-click="section2.view = 'about'">About</a></li>
+        </ul>
+
+        <switch-fader name="section2" view="view">
+          <case-fader style="display: none" view="home">
+            <div>This is the other home</div>
+          </case-fader>
+          <case-fader style="display: none" view="login">
+            <div>This is the other login page</div>
+          </case-fader>
+          <case-fader style="display: none" view="inscription">
+            <div>This is the other inscription page</div>
+          </case-fader>
+          <case-fader style="display: none" view="about">
+            <div>About the other site</div>
+          </case-fader>
+        </switch-fader>
+
+        <!-- <pre>{{section1.views}}</pre>
+        <br/>
+        <pre>{{section2.views}}</pre> -->
+
+        <br/>
+
+        <ul>
+          <li>Setion 1 lastView: {{section1.lastView}}</li>
+          <li>Setion 2 lastView: {{section2.lastView}}</li>
+        </ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
