@@ -8,7 +8,7 @@ This test illustrates the following use cases of the Angular framework:
 
 This test also underlines the following facts:
 
-Directives' controllers are singletons. This means that variables declared within a directive's controller is shared among all instances of the directive. This may lead to serious troubles knowing that, generally, directives need their own execution's contexts. To solve this problem, we use the so-called scope's isolation technique which is nothing more than a way to create an execution context for each instance of the directive. An isolated scope is just an entry within the object that contains the main scope.
+Directives' controllers are singletons. This means that variables declared within a directive's controller are shared among all instances of the directive. This may lead to serious troubles knowing that, generally, directives need their own execution's contexts. To solve this problem, we use the so-called scope's isolation technique which is nothing more than a way to create an execution context for each instance of the directive. An isolated scope is just an entry within the object that contains the main scope.
 
 Directives' isolated scopes don't necessarily have to be declared within an application controller. Scopes just need to be declared before they are used. One way to do that is to declared the scopes within an application's controller. However, it can be done within a directive's controller too. The latter option has an advantage: the directive's user does not need to know about the directive's scope.
 
