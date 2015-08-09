@@ -1,0 +1,18 @@
+/**
+ * See https://docs.angularjs.org/guide/forms
+ */
+
+/* The control has *NOT* been blurred. */
+.formular input.ng-pristine {
+  background-color: #c2f9f5;
+}
+
+/* The control has been blurred (losed focus) and is valid. */
+.formular input.ng-touched.ng-valid {
+  background-color: #73ed4e;
+}
+
+/* The control has been blurred (losed focus) and is *NOT* valid. */
+.formular input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}

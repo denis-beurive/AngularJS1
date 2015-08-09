@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+
+    <head>
+        <meta charset="utf-8">
+        <link href="app.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body ng-controller="PageController as PageCtrl">
+
+        <form name="registration" novalidate class="formular"
+              ng-controller="RegisterController as RegisterCtrl"
+              ng-init="emailMessage=false; phoneMessage=false; birthMessage=false; fixPhoneMessage=false; newUPhone=null">
+
+          <!-- Please note that the scope is relative to the controller.
+               In order to print some scope's values we need to be within the controller's scope.
+          -->
+
+          <table>
+            <tr>
+              <td>Votre adresse email:</td>
+              <td><input type="email"
+                         ng-model="user.email"
+                         name="uEmail"
+                         ng-required="true"
+                         ng-change="emailMessage = 'Email value changed'"
+                         my-input-text /></td>
+              <td>
+                <ul>
+                   <li>Value of the field is: "{{ user.email }}"</li>
+                   <li>Is the value valid? {{ registration.uEmail.$valid }}</li>
+                   <li>Is the field pristine? {{ registration.uEmail.$pristine }}</li>
+                   <li>Is the field dirty? {{ registration.uEmail.$dirty }}</li>
+                   <li>Is the field in error? {{ registration.uEmail.$error }}</li>
+                   <li>Did the value changed? {{ emailMessage }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Votre numéro de téléphone portable:</td>
+              <td><input type="text"
+                         ng-model="user.phone"
+                         name="uPhone"
+                         ng-change="phoneMessage = 'Phone value changed'"
+                         ng-required="true"/></td>
+              <td>
+                <ul>
+                    <li>Value of the field is: "{{ user.phone }}"</li>
+                    <li>Is the value valid? {{ registration.uPhone.$valid }}</li>
+                    <li>Is the field pristine? {{ registration.uPhone.$pristine }}</li>
+                    <li>Is the field dirty? {{ registration.uPhone.$dirty }}</li>
+                    <li>Is the field in error? {{ registration.uPhone.$error }}</li>
+                    <li>Did the value changed? {{ phoneMessage }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Votre numéro de téléphone fixe:</td>
+              <td><input type="text"
+                         ng-model="user.fix"
+                         name="uFix"
+                         ng-change="fixPhoneMessage = 'Fix phone value changed'"
+                         ng-required="false"/></td>
+              <td>
+                <ul>
+                    <li>Value of the field is: "{{ user.fix }}"</li>
+                    <li>Is the value valid? {{ registration.uFix.$valid }}</li>
+                    <li>Is the field pristine? {{ registration.uFix.$pristine }}</li>
+                    <li>Is the field dirty? {{ registration.uFix.$dirty }}</li>
+                    <li>Is the field in error? {{ registration.uFix.$error }}</li>
+                    <li>Did the value changed? {{ fixPhoneMessage }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Date de naissance:</td>
+              <td><input type="date"
+                   ng-model="user.birth"
+                   name="uBirth"
+                   ng-change="birthMessage = 'Birth date changed'"
+                   ng-required="true"/></td>
+              <td>
+                <ul>
+                    <li>Value of the field is: "{{ user.birth }}"</li>
+                    <li>Is the value valid? {{ registration.uBirth.$valid }}</li>
+                    <li>Is the field pristine? {{ registration.uBirth.$pristine }}</li>
+                    <li>Is the field dirty? {{ registration.uBirth.$dirty }}</li>
+                    <li>Is the field in error? {{ registration.uBirth.$error }}</li>
+                    <li>Did the value changed? {{ birthMessage }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Civilité:</td>
+              <td><input type="radio" name="uGender" value="h" ng-model="user.civilite">Homme</input>
+                  <input type="radio" name="uGender" value="f" ng-model="user.civilite">Femme</input></td>
+              <td>
+                <ul>
+                    <li>Value of the field is: "{{ user.civilite }}"</li>
+                    <li>Is the value valid? {{ registration.uGender.$valid }}</li>
+                    <li>Is the field pristine? {{ registration.uGender.$pristine }}</li>
+                    <li>Is the field dirty? {{ registration.uGender.$dirty }}</li>
+                    <li>Is the field in error? {{ registration.uGender.$error }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Pays:</td>
+              <td><select name="uCountry" ng-model="user.country">
+                      <option value="Fr">France</option>
+                      <option value="Al">Allemagne</option>
+                      <option value="Es">Espagne</option>
+                      <option value="other">Autre</option>
+                  </select></td>
+              <td>
+                <ul>
+                    <li>Value of the field is: "{{ user.country }}"</li>
+                    <li>Is the value valid? {{ registration.uCountry.$valid }}</li>
+                    <li>Is the field pristine? {{ registration.uCountry.$pristine }}</li>
+                    <li>Is the field dirty? {{ registration.uCountry.$dirty }}</li>
+                    <li>Is the field in error? {{ registration.uCountry.$error }}</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Plus de 18 ans:</td>
+              <td><input type="checkbox"
+                         name="uLegal"
+                         ng-model="user.legal"
+                         ng-required="true"/></td>
+              <td>
+                 <ul>
+                   <li>Value of the field is: "{{ user.legal }}"</li>
+                   <li>Is the value valid? {{ registration.uLegal.$valid }}</li>
+                   <li>Is the field pristine? {{ registration.uLegal.$pristine }}</li>
+                   <li>Is the field dirty? {{ registration.uLegal.$dirty }}</li>
+                   <li>Is the field in error? {{ registration.uLegal.$error }}</li>
+                 </ul>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" ng-click="register()" value="register" /></td>
+              <td>Is the form valid? {{ registration.$valid }}</td>
+            </tr>
+          </table>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
