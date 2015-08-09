@@ -14,8 +14,10 @@ Directives' isolated scopes don't necessarily have to be declared within an appl
 
 The directive's controller is executed before the "compile" function (and, Therefore, before the "link" function, since the latter is returned by the former). Hence, the "compile" function is a good place to Initialize an isolated scope.
 
-When a listener is defined, the scope's part that is watched is defined as a string of characters (and not as the actual variable being watched). The reason why we do not actually directly specify the variable being watched is that this variable may not be defined at the time the listener is set. We define an expression, as a string of characters, that will be interpreted later.
+When a "listener" (see note below) is defined, the scope's part that is watched is defined as a string of characters (and not as the actual variable being watched). The reason why we do not actually directly specify the variable being watched is that this variable may not be defined at the time the listener is set. We define an expression, as a string of characters, that will be interpreted later.
 
-Code that executes within an event handler executes outside the Angular framework. Any change made to the scope from within an event handler is not notified to the possibly assigned listeners. To notify the listeners that need to be notified, we call the method "$rootScope.Scope.$apply".
+Please note that the term "listener"  - found in the official documentation - may not be suitable. Following the API's nomenclature, I'd rather use the terms "watcher" or "observer". Indeed, the methods used to capture changes (whether from the scope or from an interpolated attributes) are: "$rootScope.Scope.$apply" (for the scope) and "$observe" (for interpolated attributes).
+
+Code that executes within an event handler executes outside the Angular framework. Any change made to the scope from within an event handler is not notified to the possibly assigned "listeners". To notify the listeners that need to be notified, we call the method "$rootScope.Scope.$apply".
 
 The official documentation states that the "compile" function and the "link" function should be used to manipulate the DOM. While this is true, it is not totally correct. These functions should be used to perform any initialization that needs to be done each time a directive is encountered in the document. Such initialization may involve the modification of the DOM, but it is not limited to. You may, for example, modify the scope.
