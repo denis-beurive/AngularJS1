@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+
+    <head>
+        <meta charset="utf-8">
+        <link href="app.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body ng-controller="PageController as PageCtrl">
+
+        <element1 name="E1-A"></element1>
+
+        <element1 name="E1-B"></element1>
+
+        <element2 name="E2-A"></element2>
+
+        <element2 name="E2-B"></element2>
+
+        <element1 name="E1-C" attribute1 attribute2></element1>
+
+        <element1 name="E1-D" attribute1 attribute2></element1>
+
+        <element1 name="E1-E">
+          <element2 name="E2-C"></element2>
+          <element2 name="E2-D"></element2>
+        </element1>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
