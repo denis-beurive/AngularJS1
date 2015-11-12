@@ -17,3 +17,6 @@ to-seafile:
 	$(MAKE) backup
 	rm -f "$(DIR_SEAFILE)/$(SEAFILE_FILE)"
 	cp "$(DIR_BACKUP)/$(BACKUP_FILE)" "$(DIR_SEAFILE)/$(SEAFILE_FILE)"
+
+push:
+	$(ADMIN_DIR)/git.sh -i ~/.ssh/ssh_github push -u origin master 
