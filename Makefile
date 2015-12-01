@@ -10,6 +10,9 @@ clean:
 	find $(MAKEFILE_DIR) -name .Ulysses-Group.plist -exec rm -rf {} \;
 	find $(MAKEFILE_DIR) -name .DS_Store -exec rm -rf {} \;
 
+update:
+	$(GIT_SCRIPT) -i $(GIT_RSA) pull
+
 backup:
 	tar zcvf - . > "$(DIR_BACKUP)/$(BACKUP_FILE)"
 
@@ -19,4 +22,4 @@ to-seafile:
 	cp "$(DIR_BACKUP)/$(BACKUP_FILE)" "$(DIR_SEAFILE)/$(SEAFILE_FILE)"
 
 push:
-	$(ADMIN_DIR)/git.sh -i ~/.ssh/ssh_github push -u origin master 
+	$(GIT_SCRIPT) -i $(GIT_RSA) push -u origin master 
