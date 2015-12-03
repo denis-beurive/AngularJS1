@@ -48,9 +48,10 @@ var service_factory_function = function() {
 	}
 };
 
-// The variable "service_factory_array" is an array.
+// The variable "service_factory_array" is an array. It declares a service that has dependencies.
+// Please note that the service provided by the function "service_function" depends on another service: the service which (registered) name is "service1Provider".
 // WARNING !!!!!
-// The string "service1Provider" refers to a service that should already be registered.
+// The string "service1Provider" refers to a service that should already be registered (within the DIC).
 var service_function = function(service1) {
 	return { // The returned object will be the service itself.
 		name: "Service 4 is created by a factory that has been defined as an array.",
@@ -74,6 +75,10 @@ var service_service_constructor = function() {
 	}
 }
 
+// The variable "service_constructor_array" is an array. It declares a service that has dependencies.
+// Please note that the service provided by the function "service_constructor" depends on another service: the service which (registered) name is "service1Provider".
+// WARNING !!!!!
+// The string "service1Provider" refers to a service that should already be registered (within the DIC).
 var service_constructor = function(service1) {
 	this.name = "Service 6 has been defined by an array.",
 	this.getName = function() {
