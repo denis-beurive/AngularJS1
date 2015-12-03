@@ -39,7 +39,7 @@ Registering a service *to a module* may be done using three methods:
     *The service factory* function will be responsable for creating the service.
   * If it is a function, then this function must return an object (with the property "`$get`"...)
 * Registering a **service factory**, by using the API's method `Module::factory`.
-  The service may be a function or an array.
+  The *service factory* may be a function or an array.
   * If the *service factory* is a function, then it will be responsable for creating the service.
   * Using an array to define a *service factory* means that we declare some depedencies.
 * Registering a **service constructor**, by using the API's method `Module::service`.
