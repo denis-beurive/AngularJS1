@@ -33,16 +33,16 @@ Services are objects. However, the services' objects are not directly injected i
 
 Registering a service *to a module* may be done using three methods:
 
-* Registering a *service provider*, by using the API's method `Module::provider`.
+* Registering a **service provider**, by using the API's method `Module::provider`.
   The *service provider* may be an object or a function.
   * If if is an object, then it must contain the property "`$get`" that points to *service factory function*.
     *The service factory* function will be responsable for creating the service (which is a singleton).
   * If it is a function, then this function must return an object (with the property "`$get`"...)
-* Registering a *service factory*, by using the API's method `Module::factory`.
+* Registering a **service factory**, by using the API's method `Module::factory`.
   The service may be a function or an array.
   * If the *service factory" is a function, then it will be responsable for creating the service (which is a singleton).
   * Using an array to define a *service factory* means that we declare some depedencies.
-* Registering a *service constructor*, by using the API's method `Module::service`.
+* Registering a **service constructor**, by using the API's method `Module::service`.
   The *service constructor* may be a function or an array.
   * if it as a function, then it must be a constructor that will be used by calling "new".
     The instantiated object will be the actual service.
