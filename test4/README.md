@@ -33,11 +33,11 @@ Services are objects. However, the services' objects are not directly injected i
 
 A service is registered via a "service builder". The "service builder" will be used to create the service. A "service builder" may be:
 
-* A simple object with a special method called "$get" that returns the service itself.
+* A simple object with a special method called "`$get`" that returns the service itself.
   In this case, the function is called a **service provider**.
 * A simple function that returns an object. The returned object may be:
   * The service itself. In this case, the function is called a **service factory**.
-  * An object with a special method called "$get" that returns the service itself. In this case, the function is called a **service provider**.
+  * An object with a special method called "`$get`" that returns the service itself. In this case, the function is called a **service provider**.
 * A simple constructor that creates the service itself.
   In this case, the function is called a **service constructor**.
 
