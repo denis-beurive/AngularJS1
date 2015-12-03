@@ -31,11 +31,23 @@ Here is a list of definitions:
 
 Services are objects. However, the services' objects are not directly injected into your AngularJS application. What is injected, and thus, registered, is a piece of code that instantiates the service's object.   
 
+A service is registered via a "service builder". The "service builder" will be used to create the service. A "service builder" may be:
+
+* A simple object with a special method called "$get" that returns the service itself.
+  In this case, the function is called a **service provider**.
+* A simple function that returns an object. The returned object may be:
+  * The service itself. In this case, the function is called a **service factory**.
+  * An object with a special method called "$get" that returns the service itself. In this case, the function is called a **service provider**.
+* A simple constructor that creates the service itself.
+  In this case, the function is called a **service constructor**.
+
+And, during the registration process the "service builder" may be injected into an array. This construction is used to declare dependencies.
+
 Registering a service *to a module* may be done using three methods:
 
 * Registering a **service provider**, by using the API's method `Module::provider`.
   The *service provider* may be an object or a function.
-  * If the *service provider* is an object, then it must contain the property "`$get`" that points to *service factory function*.
+  * If the *service provider* is an object, then it must contain the property "`$get`" that points to a *service factory function*.
     *The service factory* function will be responsable for creating the service.
   * If it is a function, then this function must return an object (with the property "`$get`"...)
 * Registering a **service factory**, by using the API's method `Module::factory`.
