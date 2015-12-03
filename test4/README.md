@@ -35,7 +35,7 @@ Registering a service *to a module* may be done using three methods:
 
 * Registering a *service provider*, by using the API's method `Module::provider`.
   The *service provider* may be an object or a function.
-  * If if is an object, then it must contain the property "`$get" that points to *service factory function*.
+  * If if is an object, then it must contain the property "`$get`" that points to *service factory function*.
     *The service factory* function will be responsable for creating the service (which is a singleton).
   * If it is a function, then this function must return an object (with the property "`$get`"...)
 * Registering a *service factory*, by using the API's method `Module::factory`.
