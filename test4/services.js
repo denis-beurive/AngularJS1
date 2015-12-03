@@ -1,7 +1,16 @@
-// This example shows how to create a service provider defined as an object.
+// This example shows how to create service "providers"/"factories"/"constructors".
+// A service is registered via a "service builder". The "service builder" will be used to create the service.
+// A service builder may be:
+//     - A simple object with a special method called "$get" that returns the service itself.
+//     - A simple function that returns the service itself.
+//     - A simple constructor that creates the service itself.
+
+
 
 // ------------------------------------------------------------------------------
 // Services' declarations for angular.Module.provider().
+// The service builder is a simple object with a special method called "$get" that
+// returns the service itself.
 // ------------------------------------------------------------------------------
 
 // The variable "service_provider_object" is a simple object.
@@ -36,6 +45,7 @@ var service_provider_function = function() {
 
 // ------------------------------------------------------------------------------
 // Services' declarations for angular.Module.factory().
+// The service builder is a simple function that returns the service itself.
 // ------------------------------------------------------------------------------
 
 // The variable "service_factory_function" is a function that returns an object (that will be the service itself).
@@ -65,6 +75,7 @@ var service_factory_array = [ 'service1Provider', service_function];
 
 // ------------------------------------------------------------------------------
 // Services' declarations for angular.Module.service().
+// The service builder is a simple constructor that creates the service itself.
 // ------------------------------------------------------------------------------
 
 // The variable "service_service_constructor" is a constructor.
