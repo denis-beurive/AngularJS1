@@ -23,7 +23,7 @@ Here is a list of definitions:
 
 **Configuration value**: as its name suggests it is a simple value that can be used by (or injected to) the components declared within the same module.
 
-**Service**: a service is an object that can be everything but a module, a controller, a directive, a filter or a configuration value. Controllers, directives, filters or configuration values are special types of sofware components that have specific roles whithin the AngularJS framework. Services are software components that have no specific meaning for the AngularJS framework (other that being a service). In other words, services contain the code that implements the application's logic. Usualy, services are used by controllers, directives or other services.
+**Service**: a service is an object that can be everything but a module, a controller, a directive, a filter or a configuration value. Controllers, directives, filters or configuration values are special types of sofware components that have specific roles (or meanings) within the AngularJS framework. Services are software components that have no specific meaning for the AngularJS framework (other that being a service). In other words, services contain the code that implements the application's logic. Usualy, services are used by controllers, directives or other services.
 
 > Please note that, within the AngularJS framework, controllers don't implement the application's logic. Controllers act on the "scope" component. 
 >
