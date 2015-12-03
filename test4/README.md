@@ -3,7 +3,7 @@
 If you used other languages or frameworks, then you may be confused by the AngularJS' terminology.
 
 * What is a controller ? Does it contain the application's logic, as it is the case within MVC frameworks such as Symfony, ZF or ROR ?  
-* What is a module ? Is it the equivalent of a Python or a Perl's module ?
+* What is a module ? Is it the equivalent of a Python or a Perl module ?
 * What is a service ? 
 * What is a component ?
 
