@@ -72,7 +72,9 @@
       //          Therefore, when the function is executed, the variable "views" has not been initialized.
       var compile = function(inElement, inAttrs) {
 
-        var link = function(inScope, inElement, inAttrs) {
+        // See: https://docs.angularjs.org/guide/directive
+        //      Section: Creating a Directive that Manipulates the DOM
+        var link = function(inScope, inElement, inAttrs, inController, inTranscludeFn) {
 
           // We have to watch for any change of the value "context.view".
           inScope.$watch('context.' + inAttrs.view, function(inValue) {
