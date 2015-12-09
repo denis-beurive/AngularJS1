@@ -28,3 +28,8 @@ Please note the signature of the function "lonk()":
 
 	var link = function(inScope, inElement, inAttrs, inController, inTranscludeFn)
 
+Please note the it is possible to "watch" for the modification of a group of scope's values.
+This functionality can be used to validate a group of values simultaneously.   
+
+	$scope.$watchGroup(['member.id', 'member.password'], function(inOldValues, inNewValues, inScope)
+
