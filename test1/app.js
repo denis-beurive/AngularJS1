@@ -44,8 +44,11 @@
         };
 
         // The context is not automatically created. Create it, if necessaury.
+        // The directive's controller is executed before the "compile" function (and, therefore, before the "link" function, since the latter is returned by the former).
+        // Therefore, the firective's controller is a good place to initialize the scope's context.
         if ("undefined" === typeof $scope.context) {
-          $scope.context = {};
+          $scope.context = {}; // Please see the object returned by the directive's function.
+                               // The value of "context" will be the value of the attribute "name".
         }
 
         // Initialize the context.
