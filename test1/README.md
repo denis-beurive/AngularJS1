@@ -21,3 +21,10 @@ Please note that the term "listener" - found in the official documentation - may
 Code that executes within an event handler executes outside the Angular framework. Any change made to the scope from within an event handler is not notified to the possibly assigned "listeners". To notify the listeners that need to be notified, we call the method "$rootScope.Scope.$apply".
 
 The official documentation states that the "compile" function and the "link" function should be used to manipulate the DOM. While this is true, it is not totally correct. These functions should be used to perform any initialization that needs to be done each time a directive is encountered in the document. Such initialization may involve the modification of the DOM, but it is not limited to. You may, for example, modify the scope.
+
+Notes:
+
+Please note the signature of the function "lonk()":
+
+	var link = function(inScope, inElement, inAttrs, inController, inTranscludeFn)
+
