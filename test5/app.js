@@ -24,7 +24,7 @@
                     if (inValue % 2 == 0) {
                         inResolve("OK: the value " + inValue + " even");
                     } else {
-                        inResolve("WARNING: the value " + inValue + " odd");
+                        inReject("WARNING: the value " + inValue + " odd");
                     }
                     $scope.value += 1;
                 }, 1000);
