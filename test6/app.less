@@ -1,0 +1,28 @@
+@import (less) "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css";
+
+
+/* These CSS classes are used when we hide the element.
+   Please do not be confused by the term "add":
+   instead, we are removing it from the view. */
+
+.hide-fade.ng-hide-add {
+	.fadeOut;
+}
+
+.hide-fade.ng-hide-add.ng-hide-add-active {
+	.animated;
+}
+
+/* These CSS classes are used when we show the element.
+   Please do not be confused by the term "remove":
+   instead, we are adding it from the view. */
+
+.hide-fade.ng-hide-remove {
+	opacity:0;  /* Prevent the element from being visible during a brief instant. */
+	.fadeIn;
+}
+
+.hide-fade.ng-hide-remove.ng-hide-remove-active {
+	.animated;	
+}
+
