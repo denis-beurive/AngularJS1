@@ -5,3 +5,5 @@ See https://docs.angularjs.org/guide/animations for the list of directives hat c
 The example uses the following CSS stylesheet for the animations:
 
 https://github.com/daneden/animate.css
+
+Good notes: http://odetocode.com/blogs/scott/archive/2014/02/25/easy-animations-for-angularjs-with-animate-css.aspx
