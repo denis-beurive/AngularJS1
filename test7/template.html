@@ -1,4 +1,13 @@
 <div>
+
+	<!--
+
+		WARNING !!!!
+		Animations don't work on directives' tags !!!!! (example of directive's tag: <my-directive/>)
+		Do _NOT_ apply animations on directives' tags ! You won't get any error message, but it will not work !
+
+	-->
+
 	<p>This element will be animated</p>
 	<button ng-click="fadeOut()" ng-disabled="fadeOutDisabled">FadeOut!</button>
 	<button disabled="">FadeIn!</button>

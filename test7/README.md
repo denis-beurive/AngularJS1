@@ -9,3 +9,13 @@ It points out the following uses:
 The example uses the following CSS stylesheet for the animations:
 
 https://github.com/daneden/animate.css
+
+Very important notes:
+
+* Make sure to load `angular-animate.js`.
+* Make sure to declare the dependencies to the module `ngAnimage`.
+* Make sure to declare the dependencies to  `$animate` (for directives).
+* Do _NOT_ apply animation on a directive's tag.
+* Use `$scope.appy(...)` when necessary (typically within an event handler).
+
+If you forget one of this point, you won't get any error message! But it won't work!
