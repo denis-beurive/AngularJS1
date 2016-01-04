@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body ng-controller="PageController as PageCtrl" bgcolor="#282828" text="#ffffff">
+
+        <p ng-show="showMe">This text will disappear in 2 seconds</p>
+        <p ng-hide="hideMe">OK, 2 seconds elapsed.</p>
+
+        <button ng-click="hide()">Make it disappear!</button>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+</html>
