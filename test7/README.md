@@ -18,6 +18,6 @@ Very important notes:
 * Do _NOT_ apply animation on a directive's tag.
 * Use `$scope.appy(...)` when necessary (typically within an event handler).
 
-If you forget one of this point, you won't get any error message! But it won't work!
+If you forget one of these points, you won't get any error message! But it won't work!
 
 Furthermore, note that children directives inherit the scope from their parent. Then you must make sure that all children directives use a distinct name as variables within the scope. Typically, if you have two forms within a "container directive", then do not define the same variable `$scope.disabled.submit` for the two forms.
