@@ -13,3 +13,8 @@ Very important notes:
 If you forget one of these points, **you won't get any error message**! But it won't work! You can spend hours trying to find the cause of the error! From this point of view AngularJS is really shit.  
 
 Furthermore, note that children directives inherit the scope from their parent. Then you must make sure that all children directives use distinct names for variables within the scope. Typically, if you have two forms within a "container directive", then do not define the same variable `$scope.disabled.submit` for the two forms.
+
+
+In order to make sure that a module is loaded, you can use the following test:
+
+	angular.module(<name of the module>);
