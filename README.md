@@ -3,6 +3,7 @@
 Very important notes:
 
 * In the HTML file for the application, make sure to load `angular-animate.js` if you plan to use `$animate`.
+* In the HTML file for the application, make sure to load `angular-route.js` if you plan to declare services.
 * In the declaration for a module, make sure to declare the dependencies to the module `ngAnimage` if you plan to use `$animate`.
 * In the declaration for a directive, make sure to declare the dependencies to  `$animate` (for directives).
 * Do _NOT_ apply animation on a directive's tag (exemple: <my-directive />). 

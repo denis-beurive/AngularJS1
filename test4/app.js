@@ -18,8 +18,6 @@
     app.service('service6Provider', service_constructor_array);
 
 
-    // var $injector = angular.injector();
-    // $injector.get('service1Provider');
 
     // -----------------------------------------------------------------------------------------------------------------
     // Controllers
@@ -29,14 +27,21 @@
      * This function implements the pages' controller.
      */
     var controller = function($scope, service1, service2, service3, service4, service5, service6) {
-        // Here we initialize the scope.
-      $scope.value = 1;
-      $scope.service1 = service1.getName();
-      $scope.service2 = service2.getName();
-      $scope.service3 = service3.getName();
-      $scope.service4 = service4.getName();
-      $scope.service5 = service5.getName();
-      $scope.service6 = service6.getName();
+
+        $scope.value = 1;
+        $scope.service1 = service1.getName();
+        $scope.service2 = service2.getName();
+        $scope.service3 = service3.getName();
+        $scope.service4 = service4.getName();
+        $scope.service5 = service5.getName();
+        $scope.service6 = service6.getName();
+
+        console.log($scope.service1);
+        console.log($scope.service2);
+        console.log($scope.service3);
+        console.log($scope.service4);
+        console.log($scope.service5);
+        console.log($scope.service6);
     };
 
     // -----------------------------------------------------------------------------------------------------------------
