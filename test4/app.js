@@ -1,12 +1,13 @@
 // This example shows how to use services.
 // Please note that the JavaScript code that contains the services must be included before this file.
+//
+// WARNING !!!! Make sure to load the file "angular-route.js"
 
 
 (function() {
 
     // The example illustrates the use of services.
     var app = angular.module('app', ['ngRoute']);
-
 
     // Declare the services.
     app.provider('service1Provider', service_provider_object);
@@ -15,6 +16,10 @@
     app.factory('service4Provider', service_factory_array);
     app.service('service5Provider', service_service_constructor);
     app.service('service6Provider', service_constructor_array);
+
+
+    // var $injector = angular.injector();
+    // $injector.get('service1Provider');
 
     // -----------------------------------------------------------------------------------------------------------------
     // Controllers
