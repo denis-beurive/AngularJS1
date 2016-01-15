@@ -18,3 +18,5 @@ Furthermore, note that children directives inherit the scope from their parent. 
 In order to make sure that a module is loaded, you can use the following test:
 
 	angular.module(<name of the module>);
+
+
