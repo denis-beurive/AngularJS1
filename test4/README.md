@@ -23,13 +23,17 @@ Here is a list of definitions:
 
 **Configuration value**: as its name suggests it is a simple value that can be used by (or injected to) the components declared within the same module.
 
-**Service**: a service is an object that can be everything but a module, a controller, a directive, a filter or a configuration value. Controllers, directives, filters or configuration values are special types of sofware components that have specific roles (or meanings) within the AngularJS framework. Services are software components that have no specific meaning for the AngularJS framework (other that being a service). In other words, services contain the code that implements the application's logic. Usualy, services are used by controllers, directives or other services.
+**Service**: a service is piece of code that can be everything but a module, a controller, a directive, a filter or a configuration value. Controllers, directives, filters or configuration values are special types of sofware components that have specific roles (or meanings) within the AngularJS framework. Services are software components that have no specific meaning for the AngularJS framework (other that being a service). In other words, services contain the code that implements the application's logic. Usualy, services are used by controllers, directives or other services.
 
 > Please note that, within the AngularJS framework, controllers don't implement the application's logic. Controllers act on the "scope" component. 
 >
 > Please note that services need to be registered whithin a module. In fact, it is the act of registerng the service whthin a module that defines the componant being registered as a service (it's like a declaration).
 
-Services are objects. However, the services' objects are not directly injected into your AngularJS application. What is injected, and thus, registered, is a piece of code that instantiates the service's object.   
+**Very important note:**
+
+Services are pieces of code. However, the services are not directly injected into your AngularJS application. What is injected, and thus, registered, is a piece of code that **returns** the service (let's call it the **service provider**). Keep in mind that the service provider (which returns the service) is only called **once**, no matter how many time you use the service within your application. In other words, services are singletons. However, a service can be a constructor (that is, the service provider can return a constructor).
+
+
 
 A service is registered via a "service builder". The "service builder" will be used to create the service. A "service builder" may be:
 
